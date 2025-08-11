@@ -98,7 +98,7 @@ const AddressForm = () => {
             className="border rounded-md border-gray-300 bg-white"
           />
         </div>
-        <div className="flex gap-2">
+        <div className="md:flex gap-2">
           <div>
             <label className="font-semibold">City</label>
             <input

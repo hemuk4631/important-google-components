@@ -7,7 +7,7 @@ function Header() {
     { id: 3, name: 'DotConnect Draw', link: '/dotConnectPolygonDraw' },
   ];
   return (
-    <div className="fixed top-0 bg-yellow-50 p-4 flex w-full gap-4">
+    <div className="fixed z-50 not-last-of-type:top-0 bg-yellow-50 p-4 flex w-full gap-4">
       {tabs?.map((ele) => (
         <div key={ele.id} className="flex items-center gap-2 ">
           <a href={ele.link} className='text-sm hover:underline hover:text-blue-700'>{ele.name}</a>
