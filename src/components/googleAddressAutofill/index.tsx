@@ -34,13 +34,6 @@ const AddressForm = () => {
         const place = autocomplete.getPlace();
         const addressComponents = place.address_components || [];
         console.log(autocomplete.getPlace());
-
-        const getComponent = (types) => {
-          const component = addressComponents.find((c) =>
-            types.some((type) => c.types.includes(type))
-          );
-          return component ? component.long_name : '';
-        };
         const getPriorityComponent = (
           primaryType: string,
           fallbackType: string = ''

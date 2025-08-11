@@ -4,7 +4,6 @@ import {
   GoogleMap,
   Polygon,
   useLoadScript,
-  Marker,
 } from '@react-google-maps/api';
 import { useEffect, useRef, useState } from 'react';
 
