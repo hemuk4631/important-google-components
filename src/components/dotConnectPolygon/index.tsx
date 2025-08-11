@@ -18,7 +18,7 @@ const center = { lat: 28.6139, lng: 77.209 };
 
 export default function ClickToDrawMap() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
     libraries,
   });
 
