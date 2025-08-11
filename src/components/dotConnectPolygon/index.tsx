@@ -31,7 +31,6 @@ export default function ClickToDrawMap() {
       setFences(JSON.parse(saved));
     }
   }, []);
-console.log(fences)
   const handlePolygonComplete = (polygon) => {
     const path = polygon
       .getPath()
@@ -67,14 +66,7 @@ console.log(fences)
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <>
-      <div style={{ marginBottom: '10px' }}>
-        <button onClick={handleSave}>Save</button>
-        <button onClick={handleClear} style={{ marginLeft: 10 }}>
-          Clear All
-        </button>
-      </div>
-
+    <div className='mt-12'>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
@@ -104,7 +96,7 @@ console.log(fences)
           onPolygonComplete={handlePolygonComplete}
         />
 
-        {fences.map((fence, idx) => (
+        {fences?.map((fence, idx) => (
           <Polygon
             key={idx}
             path={fence}
@@ -131,6 +123,12 @@ console.log(fences)
           />
         ))}
       </GoogleMap>
-    </>
+      <div className='flex gap-3 text-sm justify-end mr-4 mt-4'>
+        <button onClick={handleSave} className='py-2 px-4 bg-blue-100 rounded-md cursor-pointer'>Save</button>
+        <button onClick={handleClear} className='py-2 px-4 bg-red-100 rounded-md cursor-pointer'>
+          Clear All
+        </button>
+      </div>
+    </div>
   );
 }
